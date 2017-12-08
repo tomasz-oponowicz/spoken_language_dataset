@@ -1,2 +1,9 @@
 .env/
 .idea/
+test/
+train/
+valid/
+.temp/
+experiments/
+corpus.ods
+noises/*.flac

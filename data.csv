@@ -1,0 +1,91 @@
+Group,Language,Sex,Reader,Duration,Url
+train,en,female,Amy Koenig,00:13:26,http://ia800409.us.archive.org/10/items/nonfiction030_1308_librivox/snf030_detachedthoughtsonbooksandreading_lamb_aak_64kb.mp3
+train,en,male,dg73,00:07:00,http://ia801503.us.archive.org/7/items/stories_in_grey_1712_librivox/storiesingrey_06_pain_64kb.mp3
+train,en,female,Libby Gohn,00:26:56,http://www.archive.org/download/a_day_with_great_poets_1308_librivox/a_day_with_great_poets_04_byron_64kb.mp3
+train,en,male,ToddHW,00:30:42,http://www.archive.org/download/a_day_with_great_poets_1308_librivox/a_day_with_great_poets_10_byron_64kb.mp3
+train,en,female,Marie Hoffman,00:48:39,http://www.archive.org/download/a_day_with_great_poets_1308_librivox/a_day_with_great_poets_06_byron_64kb.mp3
+train,en,male,Bill Mosley,00:10:58,http://ia802601.us.archive.org/31/items/adventures_of_buffalobill_1210_librivox/adventuresofbuffalobill_08_cody_64kb.mp3
+train,en,female,Lucretia B.,00:55:02,http://www.archive.org/download/a_day_with_great_poets_1308_librivox/a_day_with_great_poets_08_byron_64kb.mp3
+train,en,male,Bellona Times,00:14:17,http://ia600709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_03canapes_bt_64kb.mp3
+train,en,female,Celine Major,00:17:43,http://ia801503.us.archive.org/0/items/coinofedwardvii_1712_librivox/coinofedwardvii_06_hume_64kb.mp3
+train,en,male,loubet,00:14:45,http://ia600709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_12eatinghouses_ep_64kb.mp3
+train,en,female,Rosie,00:12:28,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_04twopenny_lf_64kb.mp3
+train,en,male,David Richardson,00:07:09,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_06filboidstudge_dr_64kb.mp3
+train,en,female,TriciaG,00:35:40,http://ia802606.us.archive.org/27/items/abandoned_1012_librivox/abandoned_03_russell_64kb.mp3
+train,en,male,Jason Bennett,00:08:17,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_08summeringarden_jb_64kb.mp3
+train,en,female,Carol Box,00:11:31,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_13feedingthemind_cb_64kb.mp3
+train,en,male,Gary Olman,00:33:20,http://ia802606.us.archive.org/27/items/abandoned_1012_librivox/abandoned_07_russell_64kb.mp3
+train,en,female,Rhonda Federman,00:18:09,http://ia802704.us.archive.org/23/items/12_creepytales_1206_librivox/creepytalesbypoe_05_poe_64kb.mp3
+train,en,male,Chiquito Crasto,00:08:06,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_14dissertationroastpig_cc_64kb.mp3
+train,en,female,Rachel Gatwood,00:16:56,http://ia600409.us.archive.org/10/items/nonfiction030_1308_librivox/snf030_aequanimitas_osler_rg_64kb.mp3
+train,en,male,Patrick Wallace,00:08:31,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_17mensanswer_pjw_64kb.mp3
+train,en,female,Lynne T,00:14:14,http://ia801203.us.archive.org/10/items/boythewanderingdog_1608_librivox/boythewanderingdog_01_saunders_64kb.mp3
+train,en,male,Erik P. Kraft,00:12:20,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_20lumberroom_epk_64kb.mp3
+train,en,female,Sue Anderson,00:21:21,http://ia800409.us.archive.org/10/items/nonfiction030_1308_librivox/snf030_inmammothcave1894_burroughs_sa_64kb.mp3
+train,en,male,Philip Martin,00:13:37,http://ia800709.us.archive.org/0/items/coffeebreak_006_1108_librivox/coffeebreak006_19magicbonbons_prm_64kb.mp3
+train,en,female,Anna Simon,00:26:00,http://ia800409.us.archive.org/10/items/nonfiction030_1308_librivox/snf030_rightworld_chesterton_lz_64kb.mp3
+train,en,male,Nicholas James Bridgewater,00:27:04,http://ia600409.us.archive.org/10/items/nonfiction030_1308_librivox/snf030_alcoranjoseph_ross_njb_64kb.mp3
+valid,en,female,MaryAnn,00:23:48,http://ia801501.us.archive.org/34/items/perfectbehavior_1712_librivox/perfectbehavior_01_stewart_64kb.mp3
+valid,en,male,Lee Smalley,00:08:30,http://ia800409.us.archive.org/10/items/nonfiction030_1308_librivox/snf030_onfillinganinkwell_morley_ls_64kb.mp3
+test,en,female,CaprishaPage,00:42:41,http://www.archive.org/download/a_day_with_great_poets_1308_librivox/a_day_with_great_poets_01_byron_64kb.mp3
+test,en,male,Bob Gonzalez,00:47:37,http://www.archive.org/download/a_day_with_great_poets_1308_librivox/a_day_with_great_poets_02_byron_64kb.mp3
+train,de,female,Silmaryllis,00:11:59,http://ia801506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_03_weihnachtsfeier_sm_64kb.mp3
+train,de,male,lorda,00:06:23,http://ia801506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_02_weihnachten_loa_64kb.mp3
+train,de,female,Eva K.,00:24:25,http://ia801506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_08_christrosen_ek_64kb.mp3
+train,de,male,Boris,00:11:20,http://ia601406.us.archive.org/34/items/adventskalender_2012_librivox/adventskalender2012_24_weihnachtsfeier_in_bethlehem_bg_64kb.mp3
+train,de,female,Availle,00:41:28,http://ia801506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_10_junghanele_ava_64kb.mp3
+train,de,male,Gravel Travel,00:08:52,http://ia601506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_09_tannenzweig_gt_64kb.mp3
+train,de,female,Sonia,00:06:08,http://ia601309.us.archive.org/6/items/adventskalender_2015_1511_librivox/adventskalender2015_13_brief15_ss_64kb.mp3
+train,de,male,Karlsson,00:23:56,http://ia801506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_16_weihnachtszauber_ksn_64kb.mp3
+train,de,female,hocus-pocus,00:09:54,http://ia601607.us.archive.org/21/items/sammlung_kurzer_deutscher_prosa_049_1704_librivox/germancollection04909_weltuntergang_hok_64kb.mp3
+train,de,male,Klaus Neubauer,00:19:18,http://ia801506.us.archive.org/4/items/adventskalender_2017_1711_librivox/adventskalender2017_23_christkindvogel_kn_64kb.mp3
+train,de,female,Julia Niedermaier,00:06:44,http://ia801607.us.archive.org/21/items/sammlung_kurzer_deutscher_prosa_049_1704_librivox/germancollection04901_jfkberlin63_jn_64kb.mp3
+train,de,male,Bernd Ungerer,00:16:59,http://ia801607.us.archive.org/21/items/sammlung_kurzer_deutscher_prosa_049_1704_librivox/germancollection04905_hundedreck_bu_64kb.mp3
+train,de,female,Elli,00:19:30,http://ia801405.us.archive.org/12/items/20000_meilen_1001_librivox/20000_meilen_2_09_verne_64kb.mp3
+train,de,male,Hawe,00:26:42,http://ia801607.us.archive.org/21/items/sammlung_kurzer_deutscher_prosa_049_1704_librivox/germancollection04906_thierleben_hawe_64kb.mp3
+train,de,female,Cornelia,00:21:21,http://ia800306.us.archive.org/4/items/sammlung_prosa_026_librivox/germancollection026_09_prinzessin_am_64kb.mp3
+train,de,male,Tim Schöndorfer,00:06:17,http://ia800503.us.archive.org/24/items/sammlung_prosa_1105_librivox/germancollection031_01_zehngebote_ts_64kb.mp3
+train,de,female,Crln Yldz Ksr,00:29:17,https://ia800509.us.archive.org/4/items/ausgewahlte_erzahlungen_puschkin_1505_librivox/erzaehlungen_05_puschkin_64kb.mp3
+train,de,male,Ragnar,00:06:35,http://ia600306.us.archive.org/4/items/sammlung_prosa_026_librivox/germancollection026_15_kriegsberichterstatter_rg_64kb.mp3
+train,de,female,Ramona Deininger's beak,00:18:01,http://ia600704.us.archive.org/5/items/sammlung_prosa_034_librivox/germancollection034_01_atelier_crow_64kb.mp3
+train,de,male,Welfenelfe,00:14:04,http://ia600801.us.archive.org/1/items/sammlung_kurzer_deutscher_prosa_050_1709_librivox/germancollection050_02heimkehr_dh_64kb.mp3
+train,de,female,CocoGrillo,00:28:49,http://ia800801.us.archive.org/1/items/sammlung_kurzer_deutscher_prosa_050_1709_librivox/germancollection050_13schriftstueck_cg_64kb.mp3
+train,de,male,A. Ibrahim,00:15:25,http://ia902606.us.archive.org/5/items/sammlung_prosa_028_librivox/germancollection028_07_hauptmannkoepenick_ai_64kb.mp3
+train,de,female,Sonja,00:09:57,http://ia800300.us.archive.org/17/items/adventskalender_2010_librivox/adventskalender2010_07_chanukkah_s_64kb.mp3
+train,de,male,Dirk Weber,00:23:52,http://ia800503.us.archive.org/22/items/reise_insel_formosa_dw_librivox/formosa_02_stoepel_64kb.mp3
+train,de,female,Eden,00:06:19,http://ia600206.us.archive.org/11/items/sammlung_prosa_029_librivox/germancollection029_11_newyork26dezember1899_haj_64kb.mp3
+train,de,male,Rogthey,00:23:17,http://ia800800.us.archive.org/28/items/lustige_geschichten_1709_librivox/lustigegeschichten_01_chekhov_64kb.mp3
+valid,de,female,Caroline Sophie,00:27:12,http://ia802606.us.archive.org/5/items/sammlung_prosa_028_librivox/germancollection028_12_blumen_cs_64kb.mp3
+valid,de,male,Marilianus,00:28:32,http://ia600306.us.archive.org/4/items/sammlung_prosa_026_librivox/germancollection026_13_sonnenschein_cm_64kb.mp3
+test,de,female,danib,00:54:32,http://ia800503.us.archive.org/24/items/sammlung_prosa_1105_librivox/germancollection031_04_drama_db_64kb.mp3
+test,de,male,ink finger,00:35:08,http://ia600306.us.archive.org/4/items/sammlung_prosa_026_librivox/germancollection026_02_chandosbrief_aw_64kb.mp3
+train,es,female,Marian Martin,00:17:12,http://ia800501.us.archive.org/22/items/relatosycuentos_1103_librivox/ryc02_01_quevedo_64kb.mp3
+train,es,male,Legentis,00:16:03,http://ia800501.us.archive.org/22/items/relatosycuentos_1103_librivox/ryc02_02_valera_64kb.mp3
+train,es,female,Mongope,00:08:46,http://ia800406.us.archive.org/3/items/isaias_1603_librivox/isaias_01_reinavalera_64kb.mp3
+train,es,male,Omar,00:13:05,http://ia800501.us.archive.org/22/items/relatosycuentos_1103_librivox/ryc02_06_coloma_64kb.mp3
+train,es,female,Joyfull,00:08:46,http://ia800406.us.archive.org/3/items/isaias_1603_librivox/isaias_03_reinavalera_64kb.mp3
+train,es,male,David Aguilar,00:17:05,http://ia800501.us.archive.org/22/items/relatosycuentos_1103_librivox/ryc02_07_quiroga_64kb.mp3
+train,es,female,Charbelí Ramos Chávez,00:07:55,http://ia601306.us.archive.org/21/items/salmos_1509_librivox/salmos_08_rva_64kb.mp3
+train,es,male,Alejandro,00:15:57,http://ia800501.us.archive.org/22/items/relatosycuentos_1103_librivox/ryc02_10_palma_64kb.mp3
+train,es,female,Bekaroo,00:07:03,http://ia801306.us.archive.org/21/items/salmos_1509_librivox/salmos_07_rva_64kb.mp3
+train,es,male,Rodrigo Hinojosa,00:07:37,http://ia800406.us.archive.org/3/items/isaias_1603_librivox/isaias_30_reinavalera_128kb.mp3
+train,es,female,Kathrine Engan,00:15:09,http://ia801003.us.archive.org/1/items/cuentosquiroga_1312_librivox/cuentosdeamor_16_quiroga_64kb.mp3
+train,es,male,PPerez,00:12:41,http://ia601003.us.archive.org/1/items/cuentosquiroga_1312_librivox/cuentosdeamor_03_quiroga_64kb.mp3
+train,es,female,Anusha Iyer,00:07:08,http://ia801906.us.archive.org/19/items/los_ladrones_de_londres_1611_librivox/ladronesdelondres_36_dickens_64kb.mp3
+train,es,male,Eduardo,00:09:45,http://ia801003.us.archive.org/1/items/cuentosquiroga_1312_librivox/cuentosdeamor_10_quiroga_64kb.mp3
+train,es,female,Gabriela Cowan,00:16:31,http://ia801003.us.archive.org/1/items/cuentosquiroga_1312_librivox/cuentosdeamor_04_quiroga_64kb.mp3
+train,es,male,phossil,00:16:50,http://ia801906.us.archive.org/19/items/los_ladrones_de_londres_1611_librivox/ladronesdelondres_35_dickens_64kb.mp3
+train,es,female,gribuongiorne,00:07:14,http://ia800304.us.archive.org/32/items/cuentos_fernancaballero_1312_librivox/cuentos_02_caballero_64kb.mp3
+train,es,male,mahiba,00:06:22,https://ia800304.us.archive.org/32/items/cuentos_fernancaballero_1312_librivox/cuentos_23_caballero_64kb.mp3
+train,es,female,DreamVoz,00:06:41,http://ia600302.us.archive.org/12/items/cuentos_grimm_01_1109_librivox/cuentos_18_grimm_64kb.mp3
+train,es,male,Juan Santana,00:06:38,http://ia600502.us.archive.org/11/items/cuentoshadas_v3_1401_librivox/cuentosdehadas03_20_grimm_64kb.mp3
+train,es,female,Luigina,00:11:47,http://ia800303.us.archive.org/16/items/condenada_1107_librivox/lacondenada_04_blasco_64kb.mp3
+train,es,male,Victor Villarraza,00:06:36,http://ia800502.us.archive.org/11/items/cuentoshadas_v3_1401_librivox/cuentosdehadas03_13_grimm_64kb.mp3
+train,es,female,Elena del Valle,00:16:59,http://ia800303.us.archive.org/16/items/condenada_1107_librivox/lacondenada_12_blasco_64kb.mp3
+train,es,male,Torreblanca,00:16:42,http://ia800302.us.archive.org/12/items/cuentos_grimm_01_1109_librivox/cuentos_16_grimm_64kb.mp3
+train,es,female,Diana Valentín,00:13:33,http://ia802601.us.archive.org/35/items/100mejorespoesias_1502_librivox/cienmejorespoesias_075_menendezypelayo_64kb.mp3
+train,es,male,Jimyxt,00:06:32,http://ia800302.us.archive.org/12/items/cuentos_grimm_01_1109_librivox/cuentos_04_grimm_64kb.mp3
+valid,es,female,Koko,00:07:51,http://ia802601.us.archive.org/35/items/100mejorespoesias_1502_librivox/cienmejorespoesias_098_menendezypelayo_64kb.mp3
+valid,es,male,Miguel Esquirol,00:13:32,http://ia800303.us.archive.org/16/items/condenada_1107_librivox/lacondenada_03_blasco_64kb.mp3
+test,es,female,Fiamma,00:38:42,http://ia802607.us.archive.org/20/items/don_quijote_vol1_0706_librivox/quijote_vol1_08_cervantes_64kb.mp3
+test,es,male,Tux,00:24:27,https://ia800304.us.archive.org/32/items/cuentos_fernancaballero_1312_librivox/cuentos_07_caballero_64kb.mp3
