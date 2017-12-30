@@ -6,6 +6,7 @@ import subprocess
 import hashlib
 import muda
 import jams
+import sys
 
 # Prerequisites
 # - mp3splt is installed
@@ -82,19 +83,21 @@ def deform(input):
 
     # can't force muda to use mp3 format. use ogg instead.
 
+    # index + 1: start from 1 to be compatible with mp3splt file names
+
     # negative: deep voice
     print("Creating pitch variations...")
     for index, output in enumerate(pitch_deformer.transform(audio)):
-        muda.save('{0}_pitch_{1}.ogg'.format(input_without_ext, index), JAMS_FILE, output)
+        muda.save('{0}_pitch_{1}.ogg'.format(input_without_ext, index + 1), JAMS_FILE, output)
 
     # less 1.0: longer
     print("Creating speed variations...")
     for index, output in enumerate(speed_deformer.transform(audio)):
-        muda.save('{0}_speed_{1}.ogg'.format(input_without_ext, index), JAMS_FILE, output)
+        muda.save('{0}_speed_{1}.ogg'.format(input_without_ext, index + 1), JAMS_FILE, output)
 
     print("Creating noise variations...")
     for index, output in enumerate(noise_deformer.transform(audio)):
-        muda.save('{0}_noise_{1}.ogg'.format(input_without_ext, index), JAMS_FILE, output)
+        muda.save('{0}_noise_{1}.ogg'.format(input_without_ext, index + 1), JAMS_FILE, output)
 
 
 # https://stackoverflow.com/questions/16694907/how-to-download-large-file-in-python-with-requests-py
@@ -119,7 +122,7 @@ for group in groups:
     os.mkdir(group)
 
 for sample_index, row in data.iterrows():
-    print("===> Sample #{0}".format(sample_index))
+    sample_index += 1
 
     group = row[GROUP_ATTR]
     language = row[LANGUAGE_ATTR]
@@ -139,36 +142,43 @@ for sample_index, row in data.iterrows():
     trimmed_pattern = TRIMMED_PATTERN.format(extension='')
     frag_pattern = FRAG_PATTERN.format(lang=language, sex=sex, url_hash=url_hash, index='@n', extension='')
 
+    print("===> Sample #{0}: {1}".format(sample_index, frag_pattern))
+
     if os.path.isdir(TEMP_DIR):
         shutil.rmtree(TEMP_DIR)
     os.mkdir(TEMP_DIR)
 
-    print("Downloading a sample...")
-    fetch_resource(url, input_path)
+    try:
+        print("Downloading a sample...")
+        fetch_resource(url, input_path)
 
-    print("Trimming a sample...")
-    run_in_foreground(TRIM_CMD.format(input=input_path, output=trimmed_pattern,
-                                      offset=INPUT_OFFSET, duration=input_duration_min))
+        print("Trimming a sample...")
+        run_in_foreground(TRIM_CMD.format(input=input_path, output=trimmed_pattern,
+                                          offset=INPUT_OFFSET, duration=input_duration_min))
 
-    print("Splitting a sample into smaller chunks")
-    run_in_foreground(SPLIT_CMD.format(input=trimmed_path, output=frag_pattern,
-                                       duration=FRAG_DURATION_SEC))
+        print("Splitting a sample into smaller chunks")
+        run_in_foreground(SPLIT_CMD.format(input=trimmed_path, output=frag_pattern,
+                                           duration=FRAG_DURATION_SEC))
 
-    for frag_index in range(0, frag_count):
-        print('======> Fragment #{0}'.format(frag_index))
+        for frag_index in range(0, frag_count):
+            frag_index += 1
 
-        # mp3splt creates index starting from 1
-        frag_index_with_padding = str(frag_index + 1).zfill(2)
-        filename = FRAG_PATTERN.format(lang=language, sex=sex, url_hash=url_hash, index=frag_index_with_padding,
-                                       extension=MP3_EXTENSION)
-        source_path = os.path.join(TEMP_DIR, filename)
-        target_path = os.path.join(group, filename)
+            print('======> Fragment #{0}'.format(frag_index))
 
-        # copy frag file to test/valid/test dir
-        shutil.copy2(source_path, target_path)
+            # mp3splt creates index starting from 1
+            frag_index_with_padding = str(frag_index).zfill(2)
+            filename = FRAG_PATTERN.format(lang=language, sex=sex, url_hash=url_hash, index=frag_index_with_padding,
+                                           extension=MP3_EXTENSION)
+            source_path = os.path.join(TEMP_DIR, filename)
+            target_path = os.path.join(group, filename)
 
-        if not is_test:
-            deform(target_path)
+            # copy frag file to test/valid/test dir
+            shutil.copy2(source_path, target_path)
+
+            if not is_test:
+                deform(target_path)
+    except:
+        print("Unexpected error:", sys.exc_info()[0])
 
 
 # remove temporary files
