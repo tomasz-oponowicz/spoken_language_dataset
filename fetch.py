@@ -10,9 +10,11 @@ import sys
 
 # Prerequisites
 # - mp3splt is installed
-# - TODO most likely optional sox dependency are required too:
-#   https://www.archlinux.org/packages/extra/x86_64/sox/
-#   ...they are needed by librosa.load to load mp3 files.
+# - gstreamer is installed with following plugins:
+#   - gst-plugins-base
+#   - gst-plugins-good
+#   - gst-plugins-bad
+#   - gst-plugins-ugly (seems to be in use)
 
 SECONDS_IN_MINUTE = 60
 
