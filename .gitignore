@@ -6,6 +6,6 @@ valid/
 .temp/
 experiments/
 corpus.ods
-noises/*.flac
+noises
 temp/
 data.zip
