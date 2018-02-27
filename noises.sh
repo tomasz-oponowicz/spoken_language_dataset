@@ -32,12 +32,14 @@ function fetch_and_extract_fragments {
     VOLUME=$4
 
     # Fetch a background noise from a mirror (i.e. Google Drive)
-    wget "https://drive.google.com/uc?id=${GDRIVE_FILE_ID}&export=download" -O $FILENAME.$EXTENSION
+    # -nv: less verbose (but not completely quite)
+    wget -nv "https://drive.google.com/uc?id=${GDRIVE_FILE_ID}&export=download" -O $FILENAME.$EXTENSION
 
     if [[ $EXTENSION == *"wav"* ]]; then
 
         # Convert wav to flac
-        ffmpeg -i $FILENAME{.wav,.compressed.flac}
+        # -loglevel error: display errors only
+        ffmpeg -loglevel error -i $FILENAME{.wav,.compressed.flac}
     fi
 
     if [[ $EXTENSION == *"flac"* ]]; then
@@ -55,6 +57,7 @@ function fetch_and_extract_fragments {
     sox $FILENAME.normalized.flac $FILENAME.fragment%1n.flac trim 0 $FRAGMENT_DURATION : newfile : restart
 
     # Remove leftovers
+    # -f: ignore if file doesn't exist
     rm -f $FILENAME{.wav,.compressed.flac,.normalized.flac}
 }
 
