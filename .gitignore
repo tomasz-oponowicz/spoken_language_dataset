@@ -10,3 +10,4 @@ noises
 temp/
 tmp
 data.zip
+__pycache__
