@@ -5,7 +5,7 @@ train/
 valid/
 .temp/
 experiments/
-corpus.ods
+*.ods
 noises
 temp/
 tmp
