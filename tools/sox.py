@@ -34,16 +34,16 @@ def mix(input1, input2, output):
     ))
 
 
-def split(input, output, duration_in_sec):
+def split(input, output, fragment_duration_in_sec):
 
     # Convert a track number identifier from mp3splt to internal representation
     output = output.replace('@n', '%1n')
 
-    common.run_in_foreground("{bin} {input} {output} trim 0 {duration}".format(
+    common.run_in_foreground("{bin} {input} {output} trim 0 {duration} : newfile : restart".format(
         bin=BIN,
         input=input,
         output=output,
-        duration=duration_in_sec
+        duration=fragment_duration_in_sec
     ))
 
 
@@ -83,13 +83,13 @@ def adjust_speed(input, output, speed, expected_duration_in_sec):
         common.remove_file(temporary_file)
 
 
-def adjust_pitch(input, output, pitch):
-    # if pitch < 0 then low voice
-    # if pitch > 0 then high voice
+def adjust_pitch(input, output, semitone):
+    # if semitone < 0 then low voice
+    # if semitone > 0 then high voice
 
-    common.run_in_foreground("{bin} {input} {output} pitch {pitch}".format(
+    common.run_in_foreground("{bin} {input} {output} pitch {semitone}".format(
         bin=BIN,
         input=input,
         output=output,
-        pitch=pitch
+        semitone=semitone
     ))
