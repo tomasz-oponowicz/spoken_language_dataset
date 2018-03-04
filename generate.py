@@ -12,9 +12,10 @@ from jobs.pipeline import Pipeline
 
 
 SUFFIXES = [Transcoder.SUFFIX, Normalizer.SUFFIX]
+
+OFFSET_IN_SEC = 30
 FRAGMENT_DURATION_IN_SEC = 10
 NOISE_DURATION_IN_SEC = 30
-VALID_DURATION_IN_SEC = 5 * 60
 TRAIN_DURATION_IN_SEC = 5 * 60
 TEST_DURATION_IN_SEC = 15 * 60
 
@@ -24,8 +25,8 @@ pipeline = Pipeline(jobs=[
     NoiseDownloader(output_files_key='noise_downloader_files', output_volumes_key='noise_downloader_volumes',
                     data='./noise.csv', download_directory='./noises'),
     Transcoder(input_files_key='noise_downloader_files', output_files_key='train_transcoder_files', codec='flac'),
-    Normalizer(input_files_key='train_transcoder_files', output_files_key='train_normalizer_files',
-               duration_in_sec=NOISE_DURATION_IN_SEC),
+    Normalizer(input_files_key='train_transcoder_files', input_volumes_key='noise_downloader_volumes',
+               output_files_key='train_normalizer_files', duration_in_sec=NOISE_DURATION_IN_SEC),
     Splitter(input_files_key='train_normalizer_files', output_files_key='train_splitter_files',
              duration_in_sec=NOISE_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
     SuffixRemover(input_files_key='train_splitter_files', suffixes=SUFFIXES),
@@ -40,9 +41,9 @@ pipeline = Pipeline(jobs=[
     Transcoder(input_files_key='valid_speech_downloader_files',
                output_files_key='valid_transcoder_files', codec='flac'),
     Normalizer(input_files_key='valid_transcoder_files', output_files_key='valid_normalizer_files',
-               duration_in_sec=VALID_DURATION_IN_SEC),
+               offset_in_sec=OFFSET_IN_SEC, duration_in_sec=TRAIN_DURATION_IN_SEC),
     Splitter(input_files_key='valid_normalizer_files', output_files_key='valid_splitter_files',
-             duration_in_sec=VALID_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
+             duration_in_sec=TRAIN_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
     SuffixRemover(input_files_key='valid_splitter_files', suffixes=SUFFIXES),
     FileRemover(input_files_key='valid_transcoder_files'),
     FileRemover(input_files_key='valid_normalizer_files'),

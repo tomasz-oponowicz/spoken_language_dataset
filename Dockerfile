@@ -3,14 +3,19 @@ FROM ubuntu:16.04
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y \
- wget \
  ffmpeg \
  sox \
- mp3splt \
+ python3 \
+ python3-pip \
  && rm -rf /var/lib/apt/lists/*
 
-COPY noises.sh /app
+COPY requirements.txt /app
 
-RUN ./noises.sh
+RUN pip3 install -r requirements.txt
+
+COPY . /app
+
+# -u: unbuffered output; otherwise docker doesn't print output until process is finished
+RUN python3 -u generate.py
 
 CMD ["/usr/bin/echo", "Ready."]

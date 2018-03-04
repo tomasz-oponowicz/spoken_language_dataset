@@ -1,13 +1,10 @@
 .env/
 .idea/
+noises/
 test/
 train/
 valid/
-.temp/
+build/
 experiments/
 *.ods
-noises
-temp/
-tmp
-data.zip
 __pycache__

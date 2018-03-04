@@ -4,7 +4,8 @@ from tools import common
 BIN = '/usr/bin/sox'
 
 
-def normalize(input, output, sample_rate=22050, bit_depth=16, channels=1, volume=None, duration_in_sec=None):
+def normalize(input, output, sample_rate=22050, bit_depth=16, channels=1, volume=None,
+              offset_in_sec=0, duration_in_sec=None):
     cmd = BIN
 
     if volume:
@@ -20,7 +21,7 @@ def normalize(input, output, sample_rate=22050, bit_depth=16, channels=1, volume
     )
 
     if duration_in_sec:
-        cmd = "{cmd} trim 0 {duration}".format(cmd=cmd, duration=duration_in_sec)
+        cmd = "{cmd} trim {start} {duration}".format(cmd=cmd, start=offset_in_sec, duration=duration_in_sec)
 
     common.run_in_foreground(cmd)
 
