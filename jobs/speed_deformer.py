@@ -23,4 +23,5 @@ class SpeedDeformer:
                 output_file = output_pattern.replace('@n', str(index + 1))
                 output_files.append(output_file)
 
-                sox.adjust_speed(input_file, output_file, speed=speed, expected_duration_in_sec=self.fragment_duration_in_sec)
+                sox.adjust_speed(input_file, output_file, speed=speed,
+                                 expected_duration_in_sec=self.fragment_duration_in_sec)
