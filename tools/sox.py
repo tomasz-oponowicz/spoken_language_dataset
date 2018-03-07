@@ -37,7 +37,6 @@ def mix(input1, input2, output):
 
 def split(input, output, fragment_duration_in_sec):
 
-    # Convert a track number identifier from mp3splt to internal representation
     output = output.replace('@n', '%1n')
 
     common.run_in_foreground("{bin} {input} {output} trim 0 {duration} : newfile : restart".format(
