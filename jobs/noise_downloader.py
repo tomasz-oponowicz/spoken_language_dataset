@@ -4,7 +4,7 @@ import os
 
 FILENAME_ATTR = 'Filename'
 VOLUME_ATTR = 'Volume'
-URL_ATTR = 'Url'
+URL_ATTR = 'Mirror'
 
 
 class NoiseDownloader:

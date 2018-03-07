@@ -7,7 +7,7 @@ GROUP_ATTR = 'Group'
 LANGUAGE_ATTR = 'Language'
 SEX_ATTR = 'Sex'
 EXTENSION_ATTR = 'Extension'
-URL_ATTR = 'Url'
+URL_ATTR = 'Mirror'
 
 
 class SpeechDownloader:
