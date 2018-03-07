@@ -12,6 +12,7 @@ from jobs.pipeline import Pipeline
 
 
 SUFFIXES = [Transcoder.SUFFIX, Normalizer.SUFFIX]
+SPEEDS = [0.9, 0.95, 1.1, 1.2]
 
 OFFSET_IN_SEC = 30
 FRAGMENT_DURATION_IN_SEC = 10
@@ -24,16 +25,38 @@ pipeline = Pipeline(jobs=[
     # prepare noises
     NoiseDownloader(output_files_key='noise_downloader_files', output_volumes_key='noise_downloader_volumes',
                     data='./noise.csv', download_directory='./noises'),
-    Transcoder(input_files_key='noise_downloader_files', output_files_key='train_transcoder_files', codec='flac'),
-    Normalizer(input_files_key='train_transcoder_files', input_volumes_key='noise_downloader_volumes',
-               output_files_key='train_normalizer_files', duration_in_sec=NOISE_DURATION_IN_SEC),
-    Splitter(input_files_key='train_normalizer_files', output_files_key='train_splitter_files',
+    Transcoder(input_files_key='noise_downloader_files', output_files_key='noise_transcoder_files', codec='flac'),
+    Normalizer(input_files_key='noise_transcoder_files', input_volumes_key='noise_downloader_volumes',
+               output_files_key='noise_normalizer_files', duration_in_sec=NOISE_DURATION_IN_SEC),
+    Splitter(input_files_key='noise_normalizer_files', output_files_key='noise_splitter_files',
              duration_in_sec=NOISE_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
-    SuffixRemover(input_files_key='train_splitter_files', suffixes=SUFFIXES),
-    FileRemover(input_files_key='train_transcoder_files'),
-    FileRemover(input_files_key='train_normalizer_files'),
+    SuffixRemover(input_files_key='noise_splitter_files', suffixes=SUFFIXES),
+    FileRemover(input_files_key='noise_transcoder_files'),
+    FileRemover(input_files_key='noise_normalizer_files'),
     FileRemover(input_files_key='noise_downloader_files'),
 
+    # prepare train
+    SpeechDownloader(output_files_key='train_speech_downloader_files', data='speech.csv',
+                     group='train', download_directory='./train'),
+    Transcoder(input_files_key='train_speech_downloader_files',
+               output_files_key='train_transcoder_files', codec='flac'),
+    Normalizer(input_files_key='train_transcoder_files', output_files_key='train_normalizer_files',
+               offset_in_sec=OFFSET_IN_SEC, duration_in_sec=TRAIN_DURATION_IN_SEC),
+    Splitter(input_files_key='train_normalizer_files', output_files_key='train_splitter_files',
+             duration_in_sec=TRAIN_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
+    SpeedDeformer(input_files_key='train_splitter_files', output_files_key='train_speed_deformer_files',
+                  speeds=SPEEDS, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
+    PitchDeformer(input_files_key='train_splitter_files', output_files_key='train_pitch_deformer_files',
+                  semitones=[-200, -100, 100, 200]),
+    NoiseDeformer(input_files_key='train_splitter_files', output_files_key='train_noise_deformer_files',
+                  input_noise_files_key='noise_splitter_files'),
+    SuffixRemover(input_files_key='train_splitter_files', suffixes=SUFFIXES),
+    SuffixRemover(input_files_key='train_speed_deformer_files', suffixes=SUFFIXES),
+    SuffixRemover(input_files_key='train_pitch_deformer_files', suffixes=SUFFIXES),
+    SuffixRemover(input_files_key='train_noise_deformer_files', suffixes=SUFFIXES),
+    FileRemover(input_files_key='train_transcoder_files'),
+    FileRemover(input_files_key='train_normalizer_files'),
+    FileRemover(input_files_key='train_speech_downloader_files'),
 
     # prepare valid
     SpeechDownloader(output_files_key='valid_speech_downloader_files', data='speech.csv',
@@ -47,7 +70,21 @@ pipeline = Pipeline(jobs=[
     SuffixRemover(input_files_key='valid_splitter_files', suffixes=SUFFIXES),
     FileRemover(input_files_key='valid_transcoder_files'),
     FileRemover(input_files_key='valid_normalizer_files'),
-    FileRemover(input_files_key='valid_speech_downloader_files')
+    FileRemover(input_files_key='valid_speech_downloader_files'),
+
+    # prepare test
+    SpeechDownloader(output_files_key='test_speech_downloader_files', data='speech.csv',
+                     group='test', download_directory='./test'),
+    Transcoder(input_files_key='test_speech_downloader_files',
+               output_files_key='test_transcoder_files', codec='flac'),
+    Normalizer(input_files_key='test_transcoder_files', output_files_key='test_normalizer_files',
+               offset_in_sec=OFFSET_IN_SEC, duration_in_sec=TEST_DURATION_IN_SEC),
+    Splitter(input_files_key='test_normalizer_files', output_files_key='test_splitter_files',
+             duration_in_sec=TEST_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
+    SuffixRemover(input_files_key='test_splitter_files', suffixes=SUFFIXES),
+    FileRemover(input_files_key='test_transcoder_files'),
+    FileRemover(input_files_key='test_normalizer_files'),
+    FileRemover(input_files_key='test_speech_downloader_files')
 ])
 
 pipeline.execute()
