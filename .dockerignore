@@ -14,4 +14,6 @@ Makefile
 Dockerfile
 *.ods
 *.sh
+*.zip
+*.out
 __pycache__

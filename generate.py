@@ -1,3 +1,5 @@
+import numpy as np
+
 from jobs.transcoder import Transcoder
 from jobs.file_remover import FileRemover
 from jobs.suffix_remover import SuffixRemover
@@ -12,7 +14,8 @@ from jobs.pipeline import Pipeline
 
 
 SUFFIXES = [Transcoder.SUFFIX, Normalizer.SUFFIX]
-SPEEDS = [0.9, 0.95, 1.1, 1.2]
+SPEEDS = np.linspace(0.9, 1.2, 8)
+SEMITONES = np.linspace(-200, 200, 8)
 
 OFFSET_IN_SEC = 30
 FRAGMENT_DURATION_IN_SEC = 10
@@ -46,8 +49,8 @@ pipeline = Pipeline(jobs=[
              duration_in_sec=TRAIN_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
     SpeedDeformer(input_files_key='train_splitter_files', output_files_key='train_speed_deformer_files',
                   speeds=SPEEDS, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
-    PitchDeformer(input_files_key='train_splitter_files', output_files_key='train_pitch_deformer_files',
-                  semitones=[-200, -100, 100, 200]),
+    PitchDeformer(input_files_key='train_speed_deformer_files', output_files_key='train_pitch_deformer_files',
+                  semitones=SEMITONES),
     NoiseDeformer(input_files_key='train_splitter_files', output_files_key='train_noise_deformer_files',
                   input_noise_files_key='noise_splitter_files'),
     SuffixRemover(input_files_key='train_splitter_files', suffixes=SUFFIXES),

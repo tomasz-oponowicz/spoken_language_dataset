@@ -9,3 +9,4 @@ experiments/
 *.ods
 __pycache__
 *.zip
+*.out

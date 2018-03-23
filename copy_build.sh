@@ -5,9 +5,8 @@ set -e
 
 TARGET=build/
 rm -Rf $TARGET && mkdir $TARGET
-id=$(docker create elmo)
-docker cp $id:/app/noises $TARGET
-docker cp $id:/app/train $TARGET
-docker cp $id:/app/valid $TARGET
-docker cp $id:/app/test $TARGET
-docker rm -v $id
+
+echo "Copying files from a docker image..."
+docker run --rm -v $(pwd)/$TARGET:/host:rw elmo cp -r /app/train /app/valid /app/test /host
+
+echo "Done. Execute 'make fix_permissions' in order to change the owner of samples."
