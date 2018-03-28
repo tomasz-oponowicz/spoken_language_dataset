@@ -15,7 +15,7 @@ from jobs.pipeline import Pipeline
 
 SUFFIXES = [Transcoder.SUFFIX, Normalizer.SUFFIX]
 
-# 8 speed between (0.8, 1.2); remove the speed with value 1
+# 8 speeds between (0.8, 1.2); remove the speed with value 1
 SPEEDS = np.delete(np.linspace(0.8, 1.2, 9), 4)
 
 # 8 semitones between (-200, 200); remove the semitone with value 0
@@ -64,20 +64,6 @@ pipeline = Pipeline(jobs=[
     FileRemover(input_files_key='train_transcoder_files'),
     FileRemover(input_files_key='train_normalizer_files'),
     FileRemover(input_files_key='train_speech_downloader_files'),
-
-    # prepare valid
-    SpeechDownloader(output_files_key='valid_speech_downloader_files', data='speech.csv',
-                     group='valid', download_directory='./valid'),
-    Transcoder(input_files_key='valid_speech_downloader_files',
-               output_files_key='valid_transcoder_files', codec='flac'),
-    Normalizer(input_files_key='valid_transcoder_files', output_files_key='valid_normalizer_files',
-               offset_in_sec=OFFSET_IN_SEC, duration_in_sec=TRAIN_DURATION_IN_SEC),
-    Splitter(input_files_key='valid_normalizer_files', output_files_key='valid_splitter_files',
-             duration_in_sec=TRAIN_DURATION_IN_SEC, fragment_duration_in_sec=FRAGMENT_DURATION_IN_SEC),
-    SuffixRemover(input_files_key='valid_splitter_files', suffixes=SUFFIXES),
-    FileRemover(input_files_key='valid_transcoder_files'),
-    FileRemover(input_files_key='valid_normalizer_files'),
-    FileRemover(input_files_key='valid_speech_downloader_files'),
 
     # prepare test
     SpeechDownloader(output_files_key='test_speech_downloader_files', data='speech.csv',

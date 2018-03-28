@@ -7,6 +7,6 @@ TARGET=build/
 rm -Rf $TARGET && mkdir $TARGET
 
 echo "Copying files from a docker image..."
-docker run --rm -v $(pwd)/$TARGET:/host:rw elmo cp -r /app/train /app/valid /app/test /host
+docker run --rm -v $(pwd)/$TARGET:/host:rw elmo cp -r /app/train /app/test /host
 
 echo "Done. Execute 'make fix_permissions' in order to change the owner of samples."
