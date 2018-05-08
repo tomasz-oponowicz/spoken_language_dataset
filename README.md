@@ -18,7 +18,7 @@ The test set contains 90 minutes of original recordings.
 
 1. Fetch original recordings and generate samples:
 
-    $ make build
+       $ make build
 1. Fix samples permissions after copying them from docker container:
 
-    $ make fix_permissions
+       $ make fix_permissions
