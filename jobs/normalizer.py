@@ -1,5 +1,5 @@
-from tools import common, sox
-
+from . import common
+from audio_toolbox import sox
 
 class Normalizer:
     SUFFIX = '.normalizer'

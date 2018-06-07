@@ -1,4 +1,4 @@
-from tools import common
+from . import common
 
 
 class SuffixRemover:

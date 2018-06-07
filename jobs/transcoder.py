@@ -1,5 +1,5 @@
-from tools import common, ffmpeg
-
+from . import common
+from audio_toolbox import ffmpeg
 
 class Transcoder:
     SUFFIX = '.transcoder'

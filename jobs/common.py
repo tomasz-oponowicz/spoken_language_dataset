@@ -1,12 +1,6 @@
-import subprocess
 import os
 import shutil
 import requests
-
-
-def run_in_foreground(cmd):
-    print(cmd)
-    subprocess.check_call(cmd.split(), shell=False)
 
 
 def remove_extension(file):
