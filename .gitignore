@@ -1,12 +1,2 @@
-.env/
-.idea/
-noises/
-test/
-train/
-valid/
-build/
-experiments/
-*.ods
+build
 __pycache__
-*.zip
-*.out

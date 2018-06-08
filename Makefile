@@ -13,6 +13,6 @@ fix_permissions:
 
 clean:
 	docker rmi -f sld $(shell docker images -f 'dangling=true' -q)
-	rm -Rf build noises
+	rm -Rf build
 
 .PHONY: lint fix_style build fix_permissions clean
