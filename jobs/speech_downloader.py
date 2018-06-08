@@ -33,7 +33,8 @@ class SpeechDownloader:
                 url_hash = hashlib.md5(url.encode()).hexdigest()
 
                 filename = "{lang}_{sex}_{url_hash}.{extension}".format(
-                    lang=language, sex=sex, url_hash=url_hash, extension=extension)
+                    lang=language, sex=sex, url_hash=url_hash,
+                    extension=extension)
                 output_file = os.path.join(self.download_directory, filename)
                 output_files.append(output_file)
 

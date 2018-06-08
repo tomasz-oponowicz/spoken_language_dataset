@@ -15,7 +15,8 @@ class PitchDeformer:
         output_files = context[self.output_files_key] = []
 
         for input_file in input_files:
-            output_pattern = common.append_suffix_to_filename(input_file, PitchDeformer.SUFFIX)
+            output_pattern = common.append_suffix_to_filename(
+                input_file, PitchDeformer.SUFFIX)
 
             for index, semitone in enumerate(self.semitones):
 

@@ -1,6 +1,7 @@
 from . import common
 from audio_toolbox import ffmpeg
 
+
 class Transcoder:
     SUFFIX = '.transcoder'
 
@@ -15,7 +16,8 @@ class Transcoder:
 
         for input_file in input_files:
             output_file = common.change_extension(input_file, self.codec)
-            output_file = common.append_suffix_to_filename(output_file, Transcoder.SUFFIX)
+            output_file = common.append_suffix_to_filename(
+                output_file, Transcoder.SUFFIX)
             output_files.append(output_file)
 
             ffmpeg.transcode(input_file, output_file)

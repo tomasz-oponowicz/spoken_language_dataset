@@ -1,8 +1,8 @@
 lint:
-	pycodestyle generate.py jobs
+	pycodestyle generate.py jobs/*.py
 
 fix_style:
-	pycodestyle generate.py jobs
+	autopep8 --in-place --aggressive --aggressive generate.py jobs/*.py
 
 build:
 	docker build -t sld --rm .
