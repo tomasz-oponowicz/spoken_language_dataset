@@ -1,11 +1,8 @@
-build
-.env
-.git
-.dockerignore
-.editorconfig
-.gitignore
-Makefile
-Dockerfile
-__pycache__
-*.sh
-*.md
+# ignore everything
+**/*
+
+# whitelist
+!jobs/*.py
+!generate.py
+!requirements.txt
+!*.csv
