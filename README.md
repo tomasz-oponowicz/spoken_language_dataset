@@ -1,5 +1,7 @@
 # spoken language dataset
 
+[![Build Status](https://travis-ci.org/tomasz-oponowicz/spoken_language_dataset.svg?branch=master)](https://travis-ci.org/tomasz-oponowicz/spoken_language_dataset)
+
 The dataset contains audio samples of English, German and Spanish speech.
 LibriVox recordings were used to prepare the dataset. Samples are equally balanced between languages, genders and speakers.
 . The dataset is divided into train and test sets. Speakers in test samples are not present in train samples. This is essential to test a generalization error.
