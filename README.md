@@ -7,7 +7,7 @@ Samples are equally balanced between languages, genders and speakers.
 The ready to use dataset can be [downloaded from Kaggle][kg].
 
 The repository contains scripts used to generate the final dataset. 
-Take a look at the [Build](#Build) section if you want to generate the dataset yourself.
+Take a look at the [Build](#build) section if you want to generate the dataset yourself.
 
 ## Background
 
