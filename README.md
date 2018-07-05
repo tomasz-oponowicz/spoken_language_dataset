@@ -48,7 +48,13 @@ The dataset is divided into 2 directories:
 * *train* (73080 samples)
 * *test* (540 samples)
 
-Each sample is an FLAC audio file. 
+Each sample is an FLAC audio file with:
+
+* sample rate: 22050
+* bit depth: 16
+* channels: 1
+* duration: 10 seconds (sharp)
+
 The original recordings are MP3 files but they are converted into FLAC files quickly 
 to avoid re-encoding (and losing quality) during transformations. 
 
