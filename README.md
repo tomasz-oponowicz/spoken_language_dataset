@@ -55,7 +55,20 @@ to avoid re-encoding (and losing quality) during transformations.
 The filename of the sample has following syntax:
 
     <language>_<gender>_<recording ID>.fragment<index>[.<transformation><index>].flac
-...for example:
+
+...and variables:
+
+* *language*: `en`, `de`, or `es`
+* *gender*: `m` or `f`
+* *recording ID*: a hash of the URL
+* *fragment index*: 1-30
+* *transformation*: `speed`, `pitch` or `noise`
+* *transformation index*:
+  * if `speed`: 1-8
+  * if `pitch`: 1-8
+  * if `noise`: 1-12
+
+For example:
 
     es_m_f7d959494477e5e7e33d4666f15311c9.fragment9.speed8.flac
 
