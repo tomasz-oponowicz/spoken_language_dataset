@@ -108,7 +108,7 @@ After adjusting scripts, generate your custom dataset using steps below.
 
 ## Release History
 
-* 20018-07-04 / v0.1 / Initial version
+* 20018-07-04 / v1 / Initial version
 
 [tc]: https://community.topcoder.com/longcontest/?module=ViewProblemStatement&rd=16555&pm=13978
 [sli]: https://github.com/tomasz-oponowicz/spoken_language_identification
