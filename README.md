@@ -4,14 +4,14 @@
 
 The dataset contains speech samples of English, German and Spanish languages.
 Samples are equally balanced between languages, genders and speakers.
-The ready to use dataset can be [downloaded from Kaggle](kg).
+The ready to use dataset can be [downloaded from Kaggle][kg].
 
 The repository contains scripts used to generate the final dataset. 
 Take a look at the [Build](#Build) section if you want to generate the dataset yourself.
 
 ## Background
 
-The project was inspired by the TopCoder contest, [Spoken Languages 2](tc).
+The project was inspired by the TopCoder contest, [Spoken Languages 2][tc].
 The given dataset contains 10 second of speech recorded in 1 of 176 languages.
 The entire dataset has been based on bible readings. 
 Poorly, in many cases there is a single speaker per language (male in most cases).
@@ -21,7 +21,7 @@ Of course this can't lead to a good generic solution.
 There are two ways we can take:
 
 * First approach is to use a big dataset where all voice or language properties (e.g. gender, age, accent) become equally possible. 
-  A good example is [the Common Voice from Mozilla](cv).
+  A good example is [the Common Voice from Mozilla][cv].
   Most likely this leads to the best performance.
   However processing such a huge dataset is expensive and adding new languages is challenging.
 * Second approach is to use a small handcrafted dataset and boost it with data augmentation. 
@@ -61,7 +61,7 @@ The filename of the sample has following syntax:
 
 ## Sample Model
 
-The dataset was used to train [the spoken language identification model](sli). 
+The dataset was used to train [the spoken language identification model][sli]. 
 The trained model has 97% score (i.e. F1 metric) against the test set. 
 Additionally it generalizes well which was confirmed against real life content. 
 The fact that samples are prefeclty stratified was one of the reasons to achieve such a high performance.
