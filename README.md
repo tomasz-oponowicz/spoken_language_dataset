@@ -113,4 +113,4 @@ After adjusting scripts, generate your custom dataset using steps below.
 [tc]: https://community.topcoder.com/longcontest/?module=ViewProblemStatement&rd=16555&pm=13978
 [sli]: https://github.com/tomasz-oponowicz/spoken_language_identification
 [cv]: https://voice.mozilla.org/en/languages
-[kg]: https://www.kaggle.com/toponowicz
+[kg]: https://www.kaggle.com/toponowicz/spoken-language-identification
