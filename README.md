@@ -30,16 +30,21 @@ There are two ways we can take:
 
 The second approach has been taken.
 
-LibriVox recordings were used to prepare the dataset. 
-Samples are equally balanced between languages, genders and speakers. 
-
-The dataset is divided into train and test sets. 
-Speakers present in the test set, are not present in the train set. 
-This is essential to test a generalization error.
+[LibriVox recordings][lv] were used to prepare the dataset.
+Particular attention was paid to a big variety of unique speakers.
+Big variance forces the model to concentrate more on language properties than a specific voice.
+Samples are equally balanced between languages, genders and speakers in order not to favour any subgroup.
+Finally the dataset is divided into train and test set.
+Speakers present in the test set, are not present in the train set.
+This helps estimate a generalization error.
 
 The core of the train set is based on 420 minutes (2520 samples) of original recordings.
 After applying several audio transformations (pitch, speed and noise) the train set was extended to 12180 minutes (73080 samples).
 The test set contains 90 minutes (540 samples) of original recordings. No data augmentation has been applied.
+
+Original recordings contain 90 unique speakers.
+The number of unique speakers was increased by adjusting pitch (8 different levels) and speed (8 different levels).
+After applying audio transformations there are 1530 unique speakers.
 
 ## Data structure
 
@@ -83,7 +88,7 @@ For example:
 The dataset was used to train [the spoken language identification model][sli]. 
 The trained model has 97% score (i.e. F1 metric) against the test set. 
 Additionally it generalizes well which was confirmed against real life content. 
-The fact that samples are prefeclty stratified was one of the reasons to achieve such a high performance.
+The fact that samples are perfectly stratified was one of the reasons to achieve such a high performance.
 
 Feel free to create your own model and share results!
 
@@ -114,3 +119,4 @@ After adjusting scripts, generate your custom dataset using steps below.
 [sli]: https://github.com/tomasz-oponowicz/spoken_language_identification
 [cv]: https://voice.mozilla.org/en/languages
 [kg]: https://www.kaggle.com/toponowicz/spoken-language-identification
+[lv]: https://librivox.org
