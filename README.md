@@ -60,7 +60,7 @@ to avoid re-encoding (and losing quality) during transformations.
 
 The filename of the sample has following syntax:
 
-    <language>_<gender>_<recording ID>.fragment<index>[.<transformation><index>].flac
+    (language)_(gender)_(recording ID).fragment(index)[.(transformation)(index)].flac
 
 ...and variables:
 
