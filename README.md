@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/tomasz-oponowicz/spoken_language_dataset.svg?branch=master)](https://travis-ci.org/tomasz-oponowicz/spoken_language_dataset)
 
-The dataset contains speech samples of English, German and Spanish languages.
+The dataset contains speech samples of English, German, Spanish and French languages.
 Samples are equally balanced between languages, genders and speakers.
 The ready to use dataset can be [downloaded from Kaggle][kg].
 
@@ -69,7 +69,7 @@ The filename of the sample has following syntax:
 
 ...and variables:
 
-* *language*: `en`, `de`, or `es`
+* *language*: `en`, `de`, `es` or 'fr'
 * *gender*: `m` or `f`
 * *recording ID*: a hash of the URL
 * *fragment index*: 1-30
@@ -113,7 +113,7 @@ After adjusting scripts, generate your custom dataset using steps below.
 
 ## Release History
 
-* 20018-07-06 / v1.0 / Initial version
+* 2018-07-06 / v1.0 / Initial version
 
 [tc]: https://community.topcoder.com/longcontest/?module=ViewProblemStatement&rd=16555&pm=13978
 [sli]: https://github.com/tomasz-oponowicz/spoken_language_identification
