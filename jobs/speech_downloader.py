@@ -30,7 +30,7 @@ class SpeechDownloader:
                 language = row[LANGUAGE_ATTR]
                 sex = row[SEX_ATTR][0]  # first letter, i.e. `f` or `m`
                 extension = row[EXTENSION_ATTR]
-                url = row[MIRROR_ATTR] or row[URL_ATTR] # Prioritize mirrors
+                url = row[MIRROR_ATTR] or row[URL_ATTR]  # Prioritize mirrors
                 url_hash = hashlib.md5(url.encode()).hexdigest()
 
                 filename = "{lang}_{sex}_{url_hash}.{extension}".format(
