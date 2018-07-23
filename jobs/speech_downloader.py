@@ -7,7 +7,8 @@ GROUP_ATTR = 'Group'
 LANGUAGE_ATTR = 'Language'
 SEX_ATTR = 'Sex'
 EXTENSION_ATTR = 'Extension'
-URL_ATTR = 'Mirror'
+URL_ATTR = 'Url'
+MIRROR_ATTR = 'Mirror'
 
 
 class SpeechDownloader:
@@ -22,14 +23,14 @@ class SpeechDownloader:
 
         common.create_directory(self.download_directory)
 
-        data = pd.read_csv(self.data)
+        data = pd.read_csv(self.data).fillna(value=False)
         for index, row in data.iterrows():
             group = row[GROUP_ATTR]
             if group == self.group:
                 language = row[LANGUAGE_ATTR]
                 sex = row[SEX_ATTR][0]  # first letter, i.e. `f` or `m`
                 extension = row[EXTENSION_ATTR]
-                url = row[URL_ATTR]
+                url = row[MIRROR_ATTR] or row[URL_ATTR]  # Prioritize mirrors
                 url_hash = hashlib.md5(url.encode()).hexdigest()
 
                 filename = "{lang}_{sex}_{url_hash}.{extension}".format(
